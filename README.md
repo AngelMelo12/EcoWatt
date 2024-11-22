@@ -11,7 +11,9 @@
 Link vídeo do youtube
 
 ## Descrição
-Descrição
+O projeto EcoWatt consiste no desenvolvimento de um aplicativo de gerenciamento e controle de gasto energético doméstico, tendo como algumas funcionalidades: Registro de eletrodomésticos e seus respectivos consumos (em Watts) e previsões de consumo mensal.
+Nossos objetivos consistem em: Conscientizar a população quanto ao seu consumo energético e entender o impacto disso no meio ambiente, entender a previsão de gastos (financeiros e energéticos) e poder fazer o devido controle, além do domínio do gerenciamento da sua própria casa, que para muitos é algo complicado devido à falta de recursos como esse que a EcoWatt está oferecendo.
+
 
 ## Tecnologias
 - *Java 17*
