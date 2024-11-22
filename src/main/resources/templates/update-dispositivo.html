@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Atualizar dispositivo</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body class="body-index">
+    <section class="container-box">
+        <a class="main-button-back" th:href="@{/}">
+            <p>Retornar ao menu principal</p>
+        </a>
+        <h1>Atualizar dispositivo</h1>
+        <form class="form-box" method="POST" th:action="@{/dispositivos/edit}" th:object="${electronicDeviceUpdateDTO}">
+            <input type="hidden" th:field="*{id}" />
+            <div class="form-row">
+                <div class="form-cell">
+                    <label for="name" class="label-new">Nome</label>
+                    <input type="text" th:field="*{name}" name="name" id="name" class="input-field">
+                    <div class="error-message-box" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+                </div>
+
+                <div class="form-cell">
+                    <label for="category" class="label-new">Categoria</label>
+                    <input type="text" th:field="*{category}" name="category" id="category" class="input-field">
+                    <div class="error-message-box" th:if="${#fields.hasErrors('category')}" th:errors="*{category}"></div>
+                </div>
+            </div>
+
+            <div class="form-row">
+
+                <div class="form-cell">
+                    <label for="model" class="label-new">Modelo</label>
+                    <input type="text" th:field="*{model}" name="model" id="model" class="input-field">
+                    <div class="error-message-box" th:if="${#fields.hasErrors('model')}" th:errors="*{model}"></div>
+                </div>
+
+                <div class="form-cell">
+                    <label for="wattsPerHour" class="label-new">Consumo de Watts por hora</label>
+                    <input type="number" step="0.01" th:field="*{wattsPerHour}" name="wattsPerHour" id="wattsPerHour" class="input-field">
+                    <div class="error-message-box" th:if="${#fields.hasErrors('wattsPerHour')}" th:errors="*{wattsPerHour}"></div>
+                </div>
+
+                <div class="form-cell">
+                    <label for="usageInHours" class="label-new">Horas de uso no dia</label>
+                    <input type="number" step="1" max="24" th:field="*{usageInHours}" name="usageInHours" id="usageInHours" class="input-field">
+                    <div class="error-message-box" th:if="${#fields.hasErrors('usageInHours')}" th:errors="*{usageInHours}"></div>
+                </div>
+
+            </div>
+
+            <button class="edit-button" type="submit">Salvar</button>
+        </form>
+
+    </section>
+</body>
+</html>

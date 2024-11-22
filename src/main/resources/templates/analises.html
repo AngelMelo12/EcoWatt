@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Análises cadastradas</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body class="body-index">
+    <section class="container-box">
+        <h1>Análises de consumo mensal</h1>
+        <div class="container-menu">
+            <a class="main-button-back" th:href="@{/}">
+                <p>Menu principal</p>
+            </a>
+            <a class="main-button-back" th:href="@{/analises/create}">
+                <p>Nova análise</p>
+            </a>
+        </div>
+        <strong>Você sabia que pequenas mudanças podem trazer grandes economias?</strong><br>
+        <p>Aqui estão algumas sugestões para reduzir o consumo:</p><br>
+        <p>* Desligue aparelhos em stand-by: Eles continuam consumindo energia mesmo sem uso.</p><br>
+        <p>* Aproveite a luz natural: Abra janelas e cortinas para iluminar os ambientes durante o dia.</p><br>
+        <p>* Use eletrodomésticos de forma consciente: Junte mais roupas antes de ligar a máquina de lavar, e evite abrir a geladeira desnecessariamente.</p><br>
+        <p>* Troque lâmpadas por LED: São mais eficientes e duram mais</p><br>
+
+        <h3>Análises realizadas</h3>
+        <div class="container-list">
+            <div th:each="analysis : ${analysisList}" class="container-content">
+                <h3 th:text="${analysis.getTitle()}"></h3>
+                <h4>Data</h4>
+                <p th:text="${analysis.getCreatedAt()}"></p><br>
+
+                <h4>Status</h4>
+                <p th:text="${analysis.getStatus().getTitle()}"></p><br>
+
+                <h4>Consumo de Kw/h mensal</h4>
+                <p th:text="${analysis.getWattsPerHourConsumption()}"></p><br>
+
+                <h4>Status de consumo</h4>
+                <p th:text="${analysis.getResponse()}"></p><br>
+
+                <div class="content-action">
+                    <form th:action="@{/dispositivos/delete/{id}(id=${analysis.getId()})}" method="post" style="display:inline;">
+                        <button type="submit" onclick="return confirm('Tem certeza que deseja excluir esta análise?');" class="exclude-button">Excluir</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</body>
+</html>

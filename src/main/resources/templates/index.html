@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>EcoWatt</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body class="body-index">
+    <div class="container-box">
+        <img th:src="@{/img/tc-logo.png}" height="250" width="250"/>
+        <h3 th:text="'Bem vindo ao EcoWatt, ' + ${user.username} + '!'"></h3>
+
+        <div class="container-menu">
+            <a class="main-button-back" th:href="@{/dispositivos/create}">
+                <p>Novo eletrodoméstico</p>
+            </a>
+            <a class="main-button-back" th:href="@{/analises/create}">
+                <p>Nova análise de consumo</p>
+            </a>
+        </div>
+
+        <a class="main-button" th:href="@{/dispositivos}">
+            <p>Eletrodomésticos</p>
+        </a>
+
+        <a class="main-button" th:href="@{/analises}">
+            <p>Análises de consumo</p>
+        </a>
+
+        <a class="main-button" th:href="@{/logout}">
+            <p>Logout</p>
+        </a>
+    </div>
+</body>
+</html>

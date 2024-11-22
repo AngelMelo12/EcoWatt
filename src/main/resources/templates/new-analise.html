@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Nova análise de consumo mensal</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body class="body-index">
+    <section class="container-box">
+        <h1>Nova análise de consumo mensal</h1>
+        <div class="container-menu">
+            <a class="main-button-back" th:href="@{/}">
+                <p>Menu principal</p>
+            </a>
+            <a class="main-button-back" th:href="@{/analises}">
+                <p>Análises</p>
+            </a>
+        </div>
+        <form class="form-box" method="POST" th:action="@{/analises}" th:object="${energyConsumptionAnalysisNewDTO}">
+
+            <div class="form-row">
+                <div class="form-cell">
+                    <label for="title" class="label-new">Nome</label>
+                    <input type="text" th:field="*{title}" name="title" id="title" class="input-field">
+                    <div class="error-message-box" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></div>
+                </div>
+            </div>
+            <button class="edit-button" type="submit">Salvar</button>
+        </form>
+
+        <h3>Eletrodomésticos a serem calculados</h3>
+        <div class="container-list">
+            <div th:each="electronicDevice : ${electronicDevices}" class="container-content">
+                <h3 th:text="${electronicDevice.getName()}"></h3>
+                <h4>Modelo</h4>
+                <p th:text="${electronicDevice.getModel()}"></p><br>
+
+                <h4>Categoria</h4>
+                <p th:text="${electronicDevice.getCategory()}"></p><br>
+
+                <h4>Potência em Watts</h4>
+                <p th:text="${electronicDevice.getWatts()}"></p><br>
+
+                <h4>Horas de consumo por dia</h4>
+                <p th:text="${electronicDevice.getUsageInHours()}"></p><br>
+            </div>
+        </div>
+
+    </section>
+</body>
+</html>
