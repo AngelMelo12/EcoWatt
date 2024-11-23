@@ -7,12 +7,13 @@
 - Matheus Roberto Aparecido de M.C.P de Souza - RM98581
 - Lucca Rinaldi Valladão de Freitas - RM98207
 
-## Vídeo explicativo no YouTube
-Link vídeo do youtube
-
 ## Descrição
+O planeta Terra se encontra em uma era específica da sua história que é a globalização, onde o mundo todo se encontra conectado e em constante integração entre si. Dentro desse contexto e entendendo a situação climática que vem se agravando desde o começo da revolução industrial com a constante, massiva e cada vez maior pegada ambiental, nos vemos (população mundial) com um único objetivo: Melhorar! Portanto é necessário adotar meios para um futuro mais sustentável e ecológico visando a preservação da vida na terra. Vendo essa situação e o papel da população dentro desse processo, nós da EcoWatt viemos com a pequena mudança, que em grande escala fará uma diferença
+necessária.
+
 O projeto EcoWatt consiste no desenvolvimento de um aplicativo de gerenciamento e controle de gasto energético doméstico, tendo como algumas funcionalidades: Registro de eletrodomésticos e seus respectivos consumos (em Watts) e previsões de consumo mensal.
 Nossos objetivos consistem em: Conscientizar a população quanto ao seu consumo energético e entender o impacto disso no meio ambiente, entender a previsão de gastos (financeiros e energéticos) e poder fazer o devido controle, além do domínio do gerenciamento da sua própria casa, que para muitos é algo complicado devido à falta de recursos como esse que a EcoWatt está oferecendo.
+
 
 
 ## Tecnologias
@@ -52,4 +53,7 @@ Nossos objetivos consistem em: Conscientizar a população quanto ao seu consumo
 6. Caso queria acessar o console de banco de dados, utilize a seguinte URL:
    ```bash
    http://localhost:8080/h2-console
+7. Acesse o link do deploy em Produção:
+   ```bash
+   https://ecowatt-web-bsf3dvfjawatbde7.eastus-01.azurewebsites.net
    
